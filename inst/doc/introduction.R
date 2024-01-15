@@ -17,12 +17,15 @@ library(SSN2)
 citation(package = "SSN2")
 
 ## -----------------------------------------------------------------------------
-copy_lsn_to_temp()
+path <- system.file("lsndata/MiddleFork04.ssn", package = "SSN2")
 
 ## -----------------------------------------------------------------------------
-temp_path <- paste0(tempdir(), "/MiddleFork04.ssn")
+copy_lsn_to_temp()
+path <- paste0(tempdir(), "/MiddleFork04.ssn")
+
+## -----------------------------------------------------------------------------
 mf04p <- ssn_import(
-  path = temp_path,
+  path = path,
   predpts = c("pred1km", "CapeHorn", "Knapp"),
   overwrite = TRUE
 )
@@ -39,8 +42,8 @@ names(mf04p$preds)
 ## -----------------------------------------------------------------------------
 ggplot() +
   geom_sf(data = mf04p$edges) +
-  geom_sf(data = mf04p$preds$pred1km) +
-  geom_sf(data = mf04p$obs, color = "brown", size = 1.5) +
+  geom_sf(data = mf04p$preds$pred1km, pch = 17, color = "blue") +
+  geom_sf(data = mf04p$obs, color = "brown", size = 2) +
   theme_bw()
 
 ## -----------------------------------------------------------------------------
@@ -54,7 +57,7 @@ ssn_create_distmat(
 ## -----------------------------------------------------------------------------
 ggplot() +
   geom_sf(data = mf04p$edges) +
-  geom_sf(data = mf04p$obs, aes(color = Summer_mn), size = 1.5) +
+  geom_sf(data = mf04p$obs, aes(color = Summer_mn), size = 2) +
   scale_color_viridis_c(limits = c(-1.5, 17), option = "H") +
   theme_bw()
 
@@ -146,7 +149,7 @@ aug_preds[, ".fitted"]
 ## -----------------------------------------------------------------------------
 ggplot() +
   geom_sf(data = mf04p$edges) +
-  geom_sf(data = aug_preds, aes(color = .fitted), size = 1.5) +
+  geom_sf(data = aug_preds, aes(color = .fitted), size = 2) +
   scale_color_viridis_c(limits = c(-1.5, 17), option = "H") +
   theme_bw()
 
@@ -202,7 +205,7 @@ ssn_part
 ## -----------------------------------------------------------------------------
 ggplot() +
   geom_sf(data = mf04p$edges) +
-  geom_sf(data = mf04p$obs, aes(color = C16), size = 1.5) +
+  geom_sf(data = mf04p$obs, aes(color = C16), size = 2) +
   scale_color_viridis_c(option = "H") +
   theme_bw()
 
@@ -279,10 +282,11 @@ labs <- setdiff(labs, c("setup", "get-labels"))
 ## ----all-code, ref.label=labs, eval = FALSE-----------------------------------
 #  library(SSN2)
 #  citation(package = "SSN2")
+#  path <- system.file("lsndata/MiddleFork04.ssn", package = "SSN2")
 #  copy_lsn_to_temp()
-#  temp_path <- paste0(tempdir(), "/MiddleFork04.ssn")
+#  path <- paste0(tempdir(), "/MiddleFork04.ssn")
 #  mf04p <- ssn_import(
-#    path = temp_path,
+#    path = path,
 #    predpts = c("pred1km", "CapeHorn", "Knapp"),
 #    overwrite = TRUE
 #  )
@@ -291,8 +295,8 @@ labs <- setdiff(labs, c("setup", "get-labels"))
 #  names(mf04p$preds)
 #  ggplot() +
 #    geom_sf(data = mf04p$edges) +
-#    geom_sf(data = mf04p$preds$pred1km) +
-#    geom_sf(data = mf04p$obs, color = "brown", size = 1.5) +
+#    geom_sf(data = mf04p$preds$pred1km, pch = 17, color = "blue") +
+#    geom_sf(data = mf04p$obs, color = "brown", size = 2) +
 #    theme_bw()
 #  ssn_create_distmat(
 #    ssn.object = mf04p,
@@ -302,7 +306,7 @@ labs <- setdiff(labs, c("setup", "get-labels"))
 #  )
 #  ggplot() +
 #    geom_sf(data = mf04p$edges) +
-#    geom_sf(data = mf04p$obs, aes(color = Summer_mn), size = 1.5) +
+#    geom_sf(data = mf04p$obs, aes(color = Summer_mn), size = 2) +
 #    scale_color_viridis_c(limits = c(-1.5, 17), option = "H") +
 #    theme_bw()
 #  tg <- Torgegram(
@@ -362,7 +366,7 @@ labs <- setdiff(labs, c("setup", "get-labels"))
 #  aug_preds[, ".fitted"]
 #  ggplot() +
 #    geom_sf(data = mf04p$edges) +
-#    geom_sf(data = aug_preds, aes(color = .fitted), size = 1.5) +
+#    geom_sf(data = aug_preds, aes(color = .fitted), size = 2) +
 #    scale_color_viridis_c(limits = c(-1.5, 17), option = "H") +
 #    theme_bw()
 #  st_write(aug_preds, paste0(tempdir(), "/aug_preds.gpkg"))
@@ -402,7 +406,7 @@ labs <- setdiff(labs, c("setup", "get-labels"))
 #  ssn_part
 #  ggplot() +
 #    geom_sf(data = mf04p$edges) +
-#    geom_sf(data = mf04p$obs, aes(color = C16), size = 1.5) +
+#    geom_sf(data = mf04p$obs, aes(color = C16), size = 2) +
 #    scale_color_viridis_c(option = "H") +
 #    theme_bw()
 #  ssn_pois <- ssn_glm(
