@@ -10,7 +10,7 @@ knitr::opts_chunk$set(collapse = FALSE, comment = "#>", warning = FALSE, message
 library(ggplot2)
 library(SSN2)
 
-## ---- eval = FALSE------------------------------------------------------------
+## ----eval = FALSE-------------------------------------------------------------
 #  library(SSN2)
 
 ## -----------------------------------------------------------------------------
@@ -21,19 +21,19 @@ path <- system.file("lsndata/MiddleFork04.ssn", package = "SSN2")
 
 ## -----------------------------------------------------------------------------
 copy_lsn_to_temp()
-path <- paste0(tempdir(), "/MiddleFork04.ssn")
+path <- file.path(tempdir(), "MiddleFork04.ssn")
 
 ## -----------------------------------------------------------------------------
 mf04p <- ssn_import(
   path = path,
-  predpts = c("pred1km", "CapeHorn", "Knapp"),
+  predpts = c("pred1km", "CapeHorn"),
   overwrite = TRUE
 )
 
 ## -----------------------------------------------------------------------------
 summary(mf04p)
 
-## ---- eval = FALSE------------------------------------------------------------
+## ----eval = FALSE-------------------------------------------------------------
 #  library(ggplot2)
 
 ## -----------------------------------------------------------------------------
@@ -49,7 +49,7 @@ ggplot() +
 ## -----------------------------------------------------------------------------
 ssn_create_distmat(
   ssn.object = mf04p,
-  predpts = c("pred1km", "CapeHorn", "Knapp"),
+  predpts = c("pred1km", "CapeHorn"),
   among_predpts = TRUE,
   overwrite = TRUE
 )
@@ -58,7 +58,7 @@ ssn_create_distmat(
 ggplot() +
   geom_sf(data = mf04p$edges) +
   geom_sf(data = mf04p$obs, aes(color = Summer_mn), size = 2) +
-  scale_color_viridis_c(limits = c(-1.5, 17), option = "H") +
+  scale_color_viridis_c(limits = c(0, 17), option = "H") +
   theme_bw()
 
 ## -----------------------------------------------------------------------------
@@ -132,14 +132,14 @@ loocv_mod2$RMSPE
 aug_ssn_mod <- augment(ssn_mod)
 aug_ssn_mod
 
-## ---- results = "hide"--------------------------------------------------------
+## ----results = "hide"---------------------------------------------------------
 library(sf)
-st_write(aug_ssn_mod, paste0(tempdir(), "/aug_ssn_mod.shp"))
+st_write(aug_ssn_mod, paste0(tempdir(), "/aug_ssn_mod.gpkg"))
 
 ## -----------------------------------------------------------------------------
 plot(ssn_mod, which = 1)
 
-## ---- results = "hide"--------------------------------------------------------
+## ----results = "hide"---------------------------------------------------------
 predict(ssn_mod, newdata = "pred1km")
 
 ## -----------------------------------------------------------------------------
@@ -150,13 +150,13 @@ aug_preds[, ".fitted"]
 ggplot() +
   geom_sf(data = mf04p$edges) +
   geom_sf(data = aug_preds, aes(color = .fitted), size = 2) +
-  scale_color_viridis_c(limits = c(-1.5, 17), option = "H") +
+  scale_color_viridis_c(limits = c(0, 17), option = "H") +
   theme_bw()
 
-## ---- results = "hide"--------------------------------------------------------
+## ----results = "hide"---------------------------------------------------------
 st_write(aug_preds, paste0(tempdir(), "/aug_preds.gpkg"))
 
-## ---- results = "hide"--------------------------------------------------------
+## ----results = "hide"---------------------------------------------------------
 predict(ssn_mod)
 predict(ssn_mod, newdata = "all")
 
@@ -284,10 +284,10 @@ labs <- setdiff(labs, c("setup", "get-labels"))
 #  citation(package = "SSN2")
 #  path <- system.file("lsndata/MiddleFork04.ssn", package = "SSN2")
 #  copy_lsn_to_temp()
-#  path <- paste0(tempdir(), "/MiddleFork04.ssn")
+#  path <- file.path(tempdir(), "MiddleFork04.ssn")
 #  mf04p <- ssn_import(
 #    path = path,
-#    predpts = c("pred1km", "CapeHorn", "Knapp"),
+#    predpts = c("pred1km", "CapeHorn"),
 #    overwrite = TRUE
 #  )
 #  summary(mf04p)
@@ -300,14 +300,14 @@ labs <- setdiff(labs, c("setup", "get-labels"))
 #    theme_bw()
 #  ssn_create_distmat(
 #    ssn.object = mf04p,
-#    predpts = c("pred1km", "CapeHorn", "Knapp"),
+#    predpts = c("pred1km", "CapeHorn"),
 #    among_predpts = TRUE,
 #    overwrite = TRUE
 #  )
 #  ggplot() +
 #    geom_sf(data = mf04p$edges) +
 #    geom_sf(data = mf04p$obs, aes(color = Summer_mn), size = 2) +
-#    scale_color_viridis_c(limits = c(-1.5, 17), option = "H") +
+#    scale_color_viridis_c(limits = c(0, 17), option = "H") +
 #    theme_bw()
 #  tg <- Torgegram(
 #    formula = Summer_mn ~ ELEV_DEM + AREAWTMAP,
@@ -359,7 +359,7 @@ labs <- setdiff(labs, c("setup", "get-labels"))
 #  aug_ssn_mod <- augment(ssn_mod)
 #  aug_ssn_mod
 #  library(sf)
-#  st_write(aug_ssn_mod, paste0(tempdir(), "/aug_ssn_mod.shp"))
+#  st_write(aug_ssn_mod, paste0(tempdir(), "/aug_ssn_mod.gpkg"))
 #  plot(ssn_mod, which = 1)
 #  predict(ssn_mod, newdata = "pred1km")
 #  aug_preds <- augment(ssn_mod, newdata = "pred1km")
@@ -367,7 +367,7 @@ labs <- setdiff(labs, c("setup", "get-labels"))
 #  ggplot() +
 #    geom_sf(data = mf04p$edges) +
 #    geom_sf(data = aug_preds, aes(color = .fitted), size = 2) +
-#    scale_color_viridis_c(limits = c(-1.5, 17), option = "H") +
+#    scale_color_viridis_c(limits = c(0, 17), option = "H") +
 #    theme_bw()
 #  st_write(aug_preds, paste0(tempdir(), "/aug_preds.gpkg"))
 #  predict(ssn_mod)

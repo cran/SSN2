@@ -1,6 +1,6 @@
 Package: SSN2
 Title: Spatial Modeling on Stream Networks
-Version: 0.1.1
+Version: 0.2.0
 Authors@R: c(
     person(given = "Michael",
            family = "Dumelle",
@@ -25,17 +25,17 @@ Description: Spatial statistical modeling and prediction for data on stream netw
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 Depends: R (>= 2.10)
-Imports: stats, sf, Matrix, generics, tibble, graphics, parallel,
-        spmodel, RSQLite, utils
+Imports: stats, sf, Matrix, generics, tibble, graphics, spmodel,
+        RSQLite, utils, withr
 Suggests: rmarkdown, knitr, testthat (>= 3.0.0), ggplot2, sp, statmod
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 URL: https://usepa.github.io/SSN2/
 BugReports: https://github.com/USEPA/SSN2/issues
 NeedsCompilation: yes
-Packaged: 2024-01-15 17:21:49 UTC; MDUMELLE
+Packaged: 2024-07-26 05:49:23 UTC; MDUMELLE
 Author: Michael Dumelle [aut, cre] (<https://orcid.org/0000-0002-3393-5529>),
   Jay M. Ver Hoef [aut],
   Erin Peterson [aut],
@@ -43,4 +43,4 @@ Author: Michael Dumelle [aut, cre] (<https://orcid.org/0000-0002-3393-5529>),
   Dan Isaak [ctb]
 Maintainer: Michael Dumelle <Dumelle.Michael@epa.gov>
 Repository: CRAN
-Date/Publication: 2024-01-15 17:50:02 UTC
+Date/Publication: 2024-07-26 06:40:02 UTC
