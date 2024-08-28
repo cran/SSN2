@@ -1,6 +1,6 @@
 Package: SSN2
 Title: Spatial Modeling on Stream Networks
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: c(
     person(given = "Michael",
            family = "Dumelle",
@@ -35,7 +35,7 @@ VignetteBuilder: knitr
 URL: https://usepa.github.io/SSN2/
 BugReports: https://github.com/USEPA/SSN2/issues
 NeedsCompilation: yes
-Packaged: 2024-07-26 05:49:23 UTC; MDUMELLE
+Packaged: 2024-08-28 00:22:15 UTC; MDUMELLE
 Author: Michael Dumelle [aut, cre] (<https://orcid.org/0000-0002-3393-5529>),
   Jay M. Ver Hoef [aut],
   Erin Peterson [aut],
@@ -43,4 +43,4 @@ Author: Michael Dumelle [aut, cre] (<https://orcid.org/0000-0002-3393-5529>),
   Dan Isaak [ctb]
 Maintainer: Michael Dumelle <Dumelle.Michael@epa.gov>
 Repository: CRAN
-Date/Publication: 2024-07-26 06:40:02 UTC
+Date/Publication: 2024-08-28 04:30:03 UTC
