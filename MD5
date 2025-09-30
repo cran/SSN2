@@ -1,6 +1,6 @@
-f9d462cc3b1f60a4758510ec4ddecb63 *DESCRIPTION
+aee4d5870b4ef44347f78c8915b1be35 *DESCRIPTION
 fc7432746b6fb3438c9cdeb81c87dd9d *NAMESPACE
-d0e61c9edfc4d2aed263dde7623b2160 *NEWS.md
+1b51076ca657280072c3c8152df68a01 *NEWS.md
 3bdeae1fba582bdb4e14db6c8830f760 *R/AIC_deprecated.R
 a8929314b474e2f95dd2f8497a5a4e09 *R/AICc.R
 b80ec01b2c8ca527f6db5839f680d642 *R/AUROC.R
@@ -69,7 +69,7 @@ fd7b7b81a4e967e3cd60aa3f65e7b8c4 *R/hatvalues.R
 92bd59dc580d6c67f0f2bf6189fad8f1 *R/labels.R
 137d3350b2b58f583de637a868d438d2 *R/laploglik.R
 e4491eba734ce7d69e81319fb18fb7fe *R/laploglik_products.R
-ac82be445b1be31a72e7b9a39eddf5c7 *R/local.R
+1291f25360f7613a0c87a8f8b7db823a *R/local.R
 732e57db26dfe5b999444f0b88afe870 *R/logLik.R
 af2bd25ffc961255a0fa04cd0c19a13f *R/loocv.R
 9bbde525310dc1739fb1974b216eec5f *R/loocv_glm.R
@@ -133,7 +133,7 @@ b54db8794555342c4feee5fe0b1b8f5b *build/partial.rdb
 6eb01fe280d198f766666661d0029029 *inst/CITATION
 8f3d69d0a96d798136c02926daf2576a *inst/doc/introduction.R
 0505994b2c30ae9eea4fbe1b3f928f66 *inst/doc/introduction.Rmd
-f8e708dd521246d5fe96417a842bbccf *inst/doc/introduction.pdf
+12ad0a781468dddad07d423f766064db *inst/doc/introduction.pdf
 5069ae11b36973f12eaf8ac118353c9c *inst/lsndata/MiddleFork04.ssn/CapeHorn.gpkg
 01e678949f09d70dd4fe27db6b093a7c *inst/lsndata/MiddleFork04.ssn/binaryID.db
 7febdc2515655097d9cbb4a1870f81ba *inst/lsndata/MiddleFork04.ssn/distance/CapeHorn/dist.net2.a.RData
