@@ -1,6 +1,6 @@
 Package: SSN2
 Title: Spatial Modeling on Stream Networks
-Version: 0.3.1
+Version: 0.4.0
 Authors@R: c(
     person(given = "Michael",
            family = "Dumelle",
@@ -19,6 +19,12 @@ Authors@R: c(
            role = "ctb"),
     person(given = "Dan",
            family = "Isaak",
+           role = "ctb"),
+    person(given = "Ryan A.",
+           family = "Hill",
+           role = "ctb"),
+    person(given = "Marc",
+           family = "Weber",
            role = "ctb")
     )
 Description: Spatial statistical modeling and prediction for data on stream networks, including models based on in-stream distance (Ver Hoef, J.M. and Peterson, E.E., (2010) <DOI:10.1198/jasa.2009.ap08248>.) Models are created using moving average constructions. Spatial linear models, including explanatory variables, can be fit with (restricted) maximum likelihood.  Mapping and other graphical functions are included. 
@@ -37,13 +43,15 @@ VignetteBuilder: knitr
 URL: https://usepa.github.io/SSN2/
 BugReports: https://github.com/USEPA/SSN2/issues
 NeedsCompilation: yes
-Packaged: 2025-09-30 21:16:00 UTC; MDUMELLE
+Packaged: 2025-10-20 18:23:11 UTC; MDUMELLE
 Author: Michael Dumelle [aut, cre] (ORCID:
     <https://orcid.org/0000-0002-3393-5529>),
   Jay M. Ver Hoef [aut],
   Erin Peterson [aut],
   Alan Pearse [ctb],
-  Dan Isaak [ctb]
+  Dan Isaak [ctb],
+  Ryan A. Hill [ctb],
+  Marc Weber [ctb]
 Maintainer: Michael Dumelle <Dumelle.Michael@epa.gov>
 Repository: CRAN
-Date/Publication: 2025-09-30 22:20:02 UTC
+Date/Publication: 2025-10-21 05:10:29 UTC
