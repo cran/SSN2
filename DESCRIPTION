@@ -1,6 +1,6 @@
 Package: SSN2
 Title: Spatial Modeling on Stream Networks
-Version: 0.4.0
+Version: 0.5.0
 Authors@R: c(
     person(given = "Michael",
            family = "Dumelle",
@@ -27,23 +27,24 @@ Authors@R: c(
            family = "Weber",
            role = "ctb")
     )
-Description: Spatial statistical modeling and prediction for data on stream networks, including models based on in-stream distance (Ver Hoef, J.M. and Peterson, E.E., (2010) <DOI:10.1198/jasa.2009.ap08248>.) Models are created using moving average constructions. Spatial linear models, including explanatory variables, can be fit with (restricted) maximum likelihood.  Mapping and other graphical functions are included. 
+Description: Fit, summarize, and predict for spatial linear and generalized linear models on stream networks. Stream covariance models use moving average constructions based on in-stream distance. Parameters are estimated using likelihood methods. Additional modeling features include Euclidean covariance, anisotropy, non-spatial random effects, partition factors, and big data methods. Model-fit statistics are used to summarize, visualize, and compare models, and predictions at unobserved locations are readily obtainable. For additional details, see Ver Hoef and Peterson (2010) <DOI:10.1198/jasa.2009.ap08248> and Dumelle et al. (2024) <DOI:10.21105/joss.06389>.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
+NeedsCompilation: no
 Depends: R (>= 2.10)
 Imports: stats, sf, Matrix, generics, tibble, graphics, spmodel (>=
-        0.7.0), RSQLite, utils, withr, doParallel, filematrix, foreach,
-        parallel, itertools, iterators
-Suggests: rmarkdown, knitr, testthat (>= 3.0.0), ggplot2, sp, statmod,
-        pROC, emmeans (>= 1.4), estimability
+        0.14.0), RSQLite, utils, withr, doParallel, filematrix,
+        foreach, parallel, itertools, iterators
+Suggests: pracma, rmarkdown, knitr, testthat (>= 3.0.0), ggplot2, sp,
+        statmod, pROC, emmeans (>= 1.4), estimability, ranger,
+        randomForest, xgboost, numDeriv, pkgload, GPvecchia, spsurvey
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 URL: https://usepa.github.io/SSN2/
 BugReports: https://github.com/USEPA/SSN2/issues
-NeedsCompilation: yes
-Packaged: 2025-10-20 18:23:11 UTC; MDUMELLE
+Packaged: 2026-11-20 22:09:32 UTC; MDUMELLE
 Author: Michael Dumelle [aut, cre] (ORCID:
     <https://orcid.org/0000-0002-3393-5529>),
   Jay M. Ver Hoef [aut],
@@ -54,4 +55,4 @@ Author: Michael Dumelle [aut, cre] (ORCID:
   Marc Weber [ctb]
 Maintainer: Michael Dumelle <Dumelle.Michael@epa.gov>
 Repository: CRAN
-Date/Publication: 2025-10-21 05:10:29 UTC
+Date/Publication: 2026-11-21 00:20:02 UTC
